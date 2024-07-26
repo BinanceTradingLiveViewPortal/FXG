@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    color: #fff;
+}
+
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #000;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filters label, .filters select {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.filters select {
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+#language-button {
+    background-color: #f0b90b;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card {
+    flex: 1;
+    min-width: 250px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.value {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.percentage {
+    color: #4caf50;
+}
+
+.charts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.chart-container {
+    flex: 1;
+    min-width: 500px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cards, .charts {
+        flex-direction: column;
+    }
+
+    .card, .chart-container {
+        min-width: 100%;
+    }
+}
+
+
+/* Ensure the button is styled to match the black and yellow theme */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#withdrawal-button {
+    background-color: #f4c542; /* Yellow color for the button background */
+    color: #000000; /* Black color for the text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#withdrawal-button:hover {
+    background-color: #e0b637; /* Darker yellow on hover */
+    transform: scale(1.05); /* Slightly increase button size on hover */
+}
+
+#withdrawal-button:focus {
+    outline: none; /* Remove default focus outline */
+}

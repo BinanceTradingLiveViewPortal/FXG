@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js" defer></script> <!-- Ensure scripts.js is loaded first -->
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1 id="title">Executive Dashboard</h1>
+            <div class="filters">
+                <label id="label-date-range" for="date-range">Auto date range</label>
+                <select id="date-range">
+                    <option value="this-month">This Month</option>
+                    <option value="last-month">Last Month</option>
+                </select>
+                <label id="label-services" for="services">Services</label>
+                <select id="services">
+                    <option value="all">All</option>
+                </select>
+                <label id="label-posts" for="posts">Posts</label>
+                <select id="posts">
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <button id="language-button">Withdraw</button>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <h2 id="new-wins-title">Total USDT Balance</h2>
+                <p class="value" id="new-wins-value">263,700.90 <em>usdt</em></p>
+                <h2 id="new-wins-title">Total Balance In <em>colombia peso</em></h2> 
+                <p class="value" id="new-wins-value">1,063,110,178.35 <em>peso</em></p>
+                <p class="percentage" id="new-wins-percentage">↑ 25%</p>
+            </div>
+            <div class="card">
+                <h2 id="trial-win-rate-title">Win Rate</h2>
+                <p class="value" id="trial-win-rate-value">9.86%</p>
+                <p class="percentage" id="trial-win-rate-percentage">↑ 17%</p>
+            </div>
+            <div class="card">
+                <h2 id="new-mrr-title">New Merged Profit</h2>
+                <p class="value" id="new-mrr-value">$25,690</p>
+                <p class="percentage" id="new-mrr-percentage">↑ 8.7%</p>
+            </div>
+            <div class="card">
+                <h2 id="page-views-title">Page Views</h2>
+                <canvas id="pageViewsChart"></canvas>
+            </div>
+        </div>
+        <div class="charts">
+            <div class="chart-container">
+                <h2 id="mrr-stats-title">Country</h2>
+                 <p class="value" id="new-wins-value">COLOMBIA</p>
+                <canvas id="mrrStatsChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2 id="mrr-title">MRR</h2>
+                <h3>Verified @ Luz Borja Yaned</h3>
+                <canvas id="mrrChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const languageButton = document.getElementById("language-button");
+            if (languageButton) {
+                languageButton.onclick = toggleLanguage;
+            } else {
+                console.error('language-button element not found.');
+            }
+        });
+
+        function toggleLanguage() {
+            window.location.href = 'load.html'; // Redirect to losd.html
+        }
+    </script>
+</body>
+</html>
